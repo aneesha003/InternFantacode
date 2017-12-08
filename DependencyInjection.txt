@@ -1,0 +1,23 @@
+Dipendency injection is a technique/pattern that decouple different applications.ie,one object supplies the dependencies of one another.
+
+It allows a client the flexibility of being configurable.But,it creates clients that demand configuration details be supplied by construction code.
+
+Classes will declare their dependencies via their constructor,allowing them to follow the Explicit Dependencies principle which states that,
+"methods and classes should explixitely require any collaborating objects they need inorder to function correctly".
+
+classes designed with Dipendency Injection,are more loosely coupled because they do not have direct, hard-coded dependencies on their collaborators.
+This follows the Dependency Inversion Principle, which states that "high level modules should not depend on low level modules; both should depend on abstractions." 
+
+one of the most important concept is about "containers"or "Inversion Of Control container".
+When a system is designed to use Dipendency Injection, with many classes requesting their dependencies via their constructor (or properties),
+it's helpful to have a class dedicated to creating these classes with their associated dependencies.such classes are called,"containers".
+
+Inversion of Control actually explain the principle that,the flow of control is mainly controlled by the underlying framework rather then the application itself.
+
+
+
+
+In the WebApi created using .netcore,
+we register the DB context with the service container using the built-in support function(represented by the 'IserviceProvider'Interface)that supports constructor injection by default,
+and ASP.NET makes certain services available through Dipendency Injection. ASP.NET's container refers to the types it manages as services.
+it is configured in the application's startup.cs class.
