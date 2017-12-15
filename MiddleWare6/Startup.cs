@@ -1,24 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
-namespace MiddleWare
-{
 public class Startup
 {
     private static void HandleMapTest1(IApplicationBuilder app)
     {
         app.Run(async context =>
         {
-            await context.Response.WriteAsync("hallo...");
+            await context.Response.WriteAsync("halloo");
         });
     }
 
@@ -26,7 +17,7 @@ public class Startup
     {
         app.Run(async context =>
         {
-            await context.Response.WriteAsync("InterFantacode");
+            await context.Response.WriteAsync("FantaCode");
         });
     }
 
@@ -41,4 +32,6 @@ public class Startup
             await context.Response.WriteAsync("Hello from non-Map delegate. <p>");
         });
     }
-}}
+}
+   
+
