@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace TodoApi.Controllers
 {
-    [Route(api/TodoController-todo)]
+    [Route("api/[controller]")]
     public class TodoController : Controller
     {
         private readonly TodoContext _context;
@@ -19,9 +19,8 @@ namespace TodoApi.Controllers
                 _context.TodoItems.Add(new TodoItem { Name = "Item1" });
                 _context.SaveChanges();
             }
-        }       
-    }
-[HttpGet]
+        } 
+        [HttpGet]
 public IEnumerable<TodoItem> GetAll()
 {
     return _context.TodoItems.ToList();
@@ -37,4 +36,6 @@ public IActionResult GetById(long id)
     }
     return new ObjectResult(item);
 }
+      
+    }
 }
