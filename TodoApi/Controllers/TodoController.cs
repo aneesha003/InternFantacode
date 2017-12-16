@@ -19,8 +19,7 @@ namespace TodoApi.Controllers
                 _context.TodoItems.Add(new TodoItem { Name = "Item1" });
                 _context.SaveChanges();
             }
-        } 
-        [HttpGet]
+        } [HttpGet]
 public IEnumerable<TodoItem> GetAll()
 {
     return _context.TodoItems.ToList();
@@ -35,7 +34,6 @@ public IActionResult GetById(long id)
         return NotFound();
     }
     return new ObjectResult(item);
-}
-      
+}      
     }
 }
